@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>값검증</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+        label{
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input{
+            margin-bottom: 5px;
+            padding: 5px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button{
+            padding: 10px;  /* 버튼 내부 여백 */
+            font-size: 1em; /* 글자 크기 */
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover{   /* 마우스를 올렸을 때 */
+            background-color: #0056b3;
+        }   
+        .error{
+            display: none;  /* 에러 메시지를 숨김 */
+            color: red;
+            font-size: 0.8em;   /* 에러 메시지를 약간 작게 표시 */
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form id="simpleForm">
+        <label for="email">이메일</label>
+        <input type="email" name="email" id="email" >
+        <p class="error" id="emailError">올바른 이메일 주소를 입력하세요.</p>
+        
+        <label for="password">비밀번호</label>
+        <input type="password" name="password" id="password" >
+        <p class="error" id="passwordError">비밀번호는 5자이상, 영문자와 특수문자를 입력하세요.</p>
+
+        <label for="phone">전화번호</label>
+        <input type="tel" name="phone" id="phone">
+        <p class="error" id="phoneError">올바른 전화번호를 입력하세요. 예:010-1234-5678</p>
+
+        <button type="submit">전송</button>
+    </form>
+    <script>
+        const form = document.querySelector('#simpleForm');
+        form.addEventListener('submit', function(event){
+            event.preventDefault();
+            const email = document.querySelector('#email').value;   // email 입력값
+            const phone = document.querySelector('#phone').value;   // phone 입력값
+            const password = document.querySelector('#password').value; // password 입력값
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;    // 이메일을 검증하는 정규식
+            const phoneRegex = /^\d{3}-\d{3,4}-\d{4}$/;         // 전화번호를 검증하는 정규식
+            const passwordRegex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*]).{5,}$/; // 비밀번호를 검증하는 정규식
+
+            let valid = true;
+
+            // 이메일 검증, [정규식.test(검증할문자열)] : 문자열이 정규식에 맞는지 검사
+            if(!emailRegex.test(email)){
+                // 이메일이 정규식에 맞지 않으면 에러 메시지 출력
+                document.querySelector('#emailError').style.display = 'block'; 
+                valid = false;
+            } else {
+                // 이메일이 정규식에 맞으면 에러 메시지를 숨김
+                document.querySelector('#emailError').style.display = 'none';
+            }
+
+            if(!passwordRegex.test(password)){
+                // 비밀번호가 정규식에 맞지 않으면 에러 메시지 출력
+                document.querySelector('#passwordError').style.display = 'block';
+                valid = false;
+            } else {
+                // 비밀번호가 정규식에 맞으면 에러 메시지를 숨김
+                document.querySelector('#passwordError').style.display = 'none';
+            }
+
+            // 전화번호 검증
+            if(!phoneRegex.test(phone)){
+                // 전화번호가 정규식에 맞지 않으면 에러 메시지 출력
+                document.querySelector('#phoneError').style.display = 'block';
+                valid = false;
+            } else {
+                // 전화번호가 정규식에 맞으면 에러 메시지를 숨김
+                document.querySelector('#phoneError').style.display = 'none';
+            }   
+
+            if(valid){
+                console.log('이메일 : ', email);
+                console.log('전화번호 : ', phone);
+                console.log('비밀번호 : ', password);
+                alert('모든 값이 정상적으로 입력되었습니다.');
+            }
+        })
+    </script>
+</body>
+</html>
