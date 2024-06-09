@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>1_5번 문제(미디어쿼리)</title>
+
+    <style>
+
+        .container {
+
+    display: flex;
+
+}
+
+
+ 
+
+.left-section,
+
+.middle-section,
+
+.right-section {
+
+    flex: 1;
+
+    padding: 20px;
+
+    border: 1px solid #ccc;
+
+}
+
+
+ 
+
+@media screen and (max-width: 768px) {
+
+    .container {
+
+        flex-direction: column;
+
+    }
+
+
+ 
+
+    .left-section,
+
+    .middle-section,
+
+    .right-section {
+
+        flex: none;
+
+        width: 100%;
+
+        margin-bottom: 20px;
+
+    }
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <section class="left-section">Left Section</section>
+
+        <section class="middle-section">Center Section</section>
+
+        <section class="right-section">Right Section</section>
+
+    </div>
+
+</body>
+
+</html>
