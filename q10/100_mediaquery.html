@@ -5,42 +5,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Responsive Flexbox Layout</title>
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            }
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
 
-            .container {
-            display: flex;
-            flex-wrap: wrap; /* 자식 요소들을 한 줄로 나열하고, 넘칠 경우 다음 줄로 넘어감 */
-            justify-content: flex-start; /* 자식 요소들을 좌측 정렬 */
-            align-items: flex-start; /* 세로 축의 요소들을 상단 정렬 */
-            border: 1px solid #ccc;
-            }
+      .container {
+        display: flex;
+        flex-wrap: wrap; /* 자식 요소들을 한 줄로 나열하고, 넘칠 경우 다음 줄로 넘어감 */
+        justify-content: flex-start; /* 자식 요소들을 좌측 정렬 */
+        align-items: flex-start; /* 세로 축의 요소들을 상단 정렬 */
+        border: 1px solid #ccc;
+      }
 
-            .item {
-            flex: 0 1 calc(33.33% - 20px); /* 기본 크기를 33.33%로 설정, margin을 고려해 20px을 뺌 */
-            border: 1px solid #ddd;
-            margin: 10px;
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box;
-            }
+      .item {
+        flex: 0 1 calc(33.33% - 20px); /* 기본 너비를 33.33%로 설정, margin을 고려해 20px을 뺌 */
+        border: 1px solid #ddd;
+        margin: 10px;
+        text-align: center;
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
-            /* 2개씩 한 줄에 배치 */
-            @media (max-width: 900px) {
-            .item {
-                flex: 0 1 calc(45% - 20px); /* 기본 크기를 45%로 설정, margin을 고려해 20px을 뺌 */
-            }
-            }
+      /* 2개씩 한 줄에 배치 */
+      @media (max-width: 900px) {
+        .item {
+          flex: 0 1 calc(45% - 20px); /* 기본 크기를 45%로 설정, margin을 고려해 20px을 뺌 */
+        }
+      }
 
-            /* 1개씩 한 줄에 배치 */
-            @media (max-width: 600px) {
-            .item {
-                flex: 0 1 calc(100% - 20px); /* 기본 크기를 100%로 설정, margin을 고려해 20px을 뺌 */
-            }
-            }
-
+      /* 1개씩 한 줄에 배치 */
+      @media (max-width: 600px) {
+        .item {
+          /* 기본 크기를 100%로 설정, margin을 고려해 20px을 뺌
+                   즉, 모든 요소들이 한 줄에 배치됨 */
+          flex: 0 1 calc(100% - 20px);
+        }
+      }
     </style>
   </head>
   <body>
