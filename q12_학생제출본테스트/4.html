@@ -1,0 +1,123 @@
+<HTML>
+
+<head>
+
+<style>
+
+    /* Flex Container */
+
+    .flex-container {
+
+        display: flex;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        align-items: center;
+
+        height: 100vh;
+
+    }
+
+
+ 
+
+    /* Flex Items */
+
+    .flex-item {
+
+        width: 200px;
+
+        height: 200px;
+
+        margin: 10px;
+
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        font-size: 24px;
+
+        color: #fff;
+
+    }
+
+
+ 
+
+    .flex-item:nth-child(1) { background-color: #FF4747; } /* 빨강 */
+
+    .flex-item:nth-child(2) { background-color: #FFA200; } /* 주황 */
+
+    .flex-item:nth-child(3) { background-color: #2F8E32; } /* 초록 */
+
+    .flex-item:nth-child(4) { background-color: #0800FF; } /* 파랑 */
+
+    .flex-item:nth-child(5) { background-color: #B300FF; } /* 보라 */
+
+
+ 
+
+    @media screen and (max-width: 768px) {
+
+        .flex-item {
+
+            width: calc(25% - 20px);
+
+        }
+
+    }
+
+
+ 
+
+    @media screen and (max-width: 576px) {
+
+        .flex-item {
+
+            width: calc(33.33% - 20px);
+
+        }
+
+    }
+
+
+ 
+
+    @media screen and (max-width: 400px) {
+
+        .flex-item {
+
+            width: calc(50% - 20px);
+
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+<div class="flex-container">
+
+    <div class="flex-item">1</div>
+
+    <div class="flex-item">2</div>
+
+    <div class="flex-item">3</div>
+
+    <div class="flex-item">4</div>
+
+    <div class="flex-item">5</div>
+
+</div>
+
+</body>
+
+</html>
+

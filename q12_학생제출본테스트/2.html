@@ -1,0 +1,312 @@
+1. <!DOCTYPE html>
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Grid Layout1</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+
+ 
+
+        .box {
+
+            width: 200px;
+
+            height: 200px;
+
+            margin: 10px;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 2em;
+
+        }
+
+
+ 
+
+        .box1 { background-color: red; }
+
+        .box2 { background-color: orange; }
+
+        .box3 { background-color: green; }
+
+        .box4 { background-color: blue; }
+
+        .box5 { background-color: purple; }
+
+
+ 
+
+        @media (max-width: 1200px) {
+
+            body {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+
+ 
+
+            .box {
+
+                margin-bottom: 10px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box box1">1</div>
+
+    <div class="box box2">2</div>
+
+    <div class="box box3">3</div>
+
+    <div class="box box4">4</div>
+
+    <div class="box box5">5</div>
+
+</body>
+
+</html>
+
+ 
+
+2. 
+
+<!DOCTYPE html>
+
+<html lang="ko">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pyramid Layout2</title>
+
+    <style>
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+
+        }
+
+
+ 
+
+        .box {
+
+            width: 200px;
+
+            height: 200px;
+
+            margin: 10px;
+
+            color: white;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 2em;
+
+        }
+
+
+ 
+
+        .box1 { background-color: red; }
+
+        .box2 { background-color: orange; }
+
+        .box3 { background-color: green; }
+
+        .box4 { background-color: blue; }
+
+        .box5 { background-color: purple; }
+
+
+ 
+
+        @media (max-width: 600px) {
+
+            body {
+
+                flex-direction: column;
+
+                align-items: center;
+
+            }
+
+
+ 
+
+            .box {
+
+                margin: 10px 0;
+
+            }
+
+        }
+
+
+ 
+
+        @media (min-width: 600px) {
+
+            .row {
+
+                display: flex;
+
+                justify-content: center;
+
+                width: 100%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="row">
+
+        <div class="box box1">1</div>
+
+        <div class="box box2">2</div>
+
+        <div class="box box3">3</div>
+
+        <div class="box box4">4</div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="box box5">5</div>
+
+    </div>
+
+</body>
+
+</html>
+
+ 
+
+3.
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Pyramid Layout3</title>
+   <style>
+       body {
+           font-family: Arial, sans-serif;
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+           margin: 0;
+       }
+
+       .row {
+           display: flex;
+           justify-content: center;
+           margin: 10px 0; /* Increased margin */
+       }
+
+       .box {
+           width: 350px;
+           height: 200px;
+           margin: 0 10px; /* Increased margin */
+           padding: 10px;
+           color: white;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           font-size: 2em;
+       }
+
+       .box1 { background-color: red; }
+       .box2 { background-color: orange; }
+       .box3 { background-color: green; }
+       .box4 { background-color: blue; }
+       .box5 { background-color: purple; }
+
+       @media (max-width: 600px) {
+           .box {
+               margin: 0 0 10px 0; /* Adjusted margin */
+           }
+       }
+
+       @media (min-width: 600px) {
+           .row {
+               width: 100%;
+           }
+       }
+   </style>
+</head>
+<body>
+   <div class="row">
+       <div class="box box1">1</div>
+       <div class="box box2">2</div>
+   </div>
+   <div class="row">
+       <div class="box box3">3</div>
+       <div class="box box4">4</div>
+   </div>
+   <div class="row">
+       <div class="box box5">5</div>
+   </div>
+</body>
+</html>
